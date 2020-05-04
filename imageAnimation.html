@@ -1,0 +1,60 @@
+<html>
+<head>
+<script language="JavaScript">
+var srcList = ["images/imgAnim/img0.jpeg", 
+               "images/imgAnim/img1.jpg", 
+               "images/imgAnim/img2.jpg", 
+               "images/imgAnim/img3.jpg",  
+               "images/imgAnim/img4.jpg",  
+               "images/imgAnim/img5.jpg",  
+               "images/imgAnim/img6.jpg",  
+               "images/imgAnim/img7.jpg",  
+               "images/imgAnim/img8.jpg",
+               "images/imgAnim/img9.jpg"];		   
+var index = 0;
+var loopCount = 0;
+    
+var time;
+
+function begin()
+{
+    index = index +1;
+    
+    if( index > 9)
+    {
+        index = 0;
+        loopCount = loopCount +1;
+    }
+    document.getElementById("myPic").src = srcList[index];
+
+    if (loopCount < 1)
+    {
+        time = setTimeout("begin()", 500);
+    }
+    else
+    {
+        time = clearTimeout();
+        loopCount = 0;
+    }
+}
+</script>
+</head>
+<body bgcolor = "#FCFFA6">
+<font face="Trebuchet" color="#004B75">
+<center>
+<h1>Why Lizards Lose Their Tails</h1>
+<p>
+Lizards lose their tails in order to distract predators. <br/> The wiggling tail can take the predator's attention away from the lizard itself. <br/> It takes anywhere from six months to a year for the tail to regrow. <br/> <br/>
+<p/>
+<img id="myPic" src="images/imgAnim/img0.jpeg" width="400"/>
+
+<br/><br/>
+<input type="button" value="Start Animation!" onclick="begin()">
+<br/> <br/>
+<p>
+Click here to <a href="index.html"> return to the home page. </a>
+<p/>
+</center>
+</font>
+</body>
+</html>
